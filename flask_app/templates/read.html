@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>All Users</title>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="profile page">
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="head">
+                <h1>All Users</h1>
+            </div>
+
+            <div class="table">
+                <form action="/" method="POST">
+                    <table>
+                        <thead>
+                            <th scope="col">ID</th>
+                            <th scope="col">Full Name</th>
+                            <th scope="col">Email</th>
+                        </thead>
+                        <tbody>
+                            {%for u in users%}
+                            <tr>
+                                <td>{{u.id}}</td>
+                                <td>{{u.first_name}} {{u.last_name}}</td>
+                                <td>{{u.email}}</td>
+                            </tr>
+                            {%endfor%}
+                        </tbody>
+                    </table>
+                </form>
+            </div>
+
+            <div class="submit">
+                <a class="btn" href="/new_user">Add New User</a>
+            </div>
+        </div>
+    </body>
+    <!-- <script src="script.js"></script> -->
+</html>

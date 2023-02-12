@@ -1,0 +1,84 @@
+/* CSS reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+  /* Fixed width container class that will "auto-center" itself */
+.container {
+    width: 1200px;
+    margin: 0 auto;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.head {
+    text-align: center;
+    margin: 20px;
+}
+
+.table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 35px;
+}
+
+.table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+th {
+    display: table-cell;
+    vertical-align: inherit;
+    font-weight: bold;
+    padding: 15px;
+    color: #ddd;
+    background-color: seagreen;
+}
+
+td {
+    display: table-cell;
+    vertical-align: inherit;
+    padding: 20px;
+}
+
+.submit {
+    display: flex;
+    justify-content: space-around;
+    justify-items: center;
+}
+
+.btn {
+    color: white;
+    border-color: whitesmoke;
+    background-color: lightseagreen;
+    border-radius: 6%;
+    padding: 10px;
+    text-decoration: none;
+    box-shadow: 3px 2px black;
+}
+
+.home {
+    display: flex;
+    justify-content: center;
+}
+
+.put {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    margin: 25px;
+}
+
+.name1, .name2, .email {
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    padding: 5px;
+}
+
+h3 {
+    padding: 15px;
+}
