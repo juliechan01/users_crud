@@ -1,41 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>Add New User</title>
+        <title>Edit User</title>
         <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="description" content="profile page">
+        <meta name="description" content="edit user">
     </head>
 
     <body>
         <div class="container">
             <div class="head">
-                <h1>Add New User</h1>
+                <h1>Edit User {{user.id}}</h1>
             </div>
             <div class="home">
                 <a class="btn" href="/">Home</a>
             </div>
-            <form action="/create_user" method="POST">
+            <form action="/edit_user/{{user.id}}" method="POST">
                 <div class="put">
                     <div class="name">
                         <h3>First Name:</h3>
-                        <input type="text" name="first_name">
+                        <input type="text" name="first_name" value="{{user.first_name}}">
                     </div>
                     <div class="name">
                         <h3>Last Name:</h3>
-                        <input type="text" name="last_name">
+                        <input type="text" name="last_name" value="{{user.last_name}}">
                     </div>
                     <div class="email">
                         <h3>Email:</h3>
-                        <input type="text" name="email">
+                        <input type="text" name="email" value="{{user.email}}">
+                    </div>
+                    <div class="submit">
+                        <button class="btn">Update</button>
                     </div>
                 </div>
-                <div class="submit">
-                    <button class="btn">Add User</button>
-                </div>
             </form>
+            <a href="/user/show/{{user.id}}">Show User</a>
         </div>
     </body>
-    <!-- <script src="script.js"></script> -->
 </html>

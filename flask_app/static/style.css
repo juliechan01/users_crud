@@ -72,7 +72,7 @@ td {
     margin: 25px;
 }
 
-.name1, .name2, .email {
+.name, .email, .date {
     display: flex;
     justify-content: center;
     align-items:center;

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>One User</title>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="one user">
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="head">
+                <h1>User {{user.id}}</h1>
+            </div>
+            <div class="home">
+                <a class="btn" href="/">Home</a>
+            </div>
+            <div class="info">
+                <div class="name">
+                    <h3>Full Name:</h3>
+                    <p>{{user.first_name}} {{user.last_name}}</p>
+                </div>
+                <div class="email">
+                    <h3>Email:</h3>
+                    <p>{{user.email}}</p>
+                </div>
+                <div class="date">
+                    <h3>Created On:</h3>
+                    <p>{{user.created_at}}</p>
+                </div>
+                <div class="date">
+                    <h3>Last Updated On:</h3>
+                    <p>{{user.updated_at}}</p>
+                </div>
+            </div>
+            <div>
+                <a href="/edit/{{user.id}}">Edit</a>
+                <a href="/remove_user/{{user.id}}">Delete</a>
+            </div>
+        </div>
+    </body>
+</html>

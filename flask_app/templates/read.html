@@ -5,7 +5,7 @@
         <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="description" content="profile page">
+        <meta name="description" content="all users">
     </head>
 
     <body>
@@ -21,6 +21,7 @@
                             <th scope="col">ID</th>
                             <th scope="col">Full Name</th>
                             <th scope="col">Email</th>
+                            <th scope="col">Actions</th>
                         </thead>
                         <tbody>
                             {%for u in users%}
@@ -28,6 +29,11 @@
                                 <td>{{u.id}}</td>
                                 <td>{{u.first_name}} {{u.last_name}}</td>
                                 <td>{{u.email}}</td>
+                                <td>
+                                    <a href="/user/show/{{u.id}}">Show</a>
+                                    <a href="/edit/{{u.id}}">Edit</a>
+                                    <a href="/remove_user/{{u.id}}">Delete</a>
+                                </td>
                             </tr>
                             {%endfor%}
                         </tbody>
